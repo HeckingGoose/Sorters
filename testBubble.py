@@ -4,7 +4,6 @@ def TestBubble(unsorted, ascend, descend):
     # Test bubble sortIndex
     print(">Testing Bubble Sort<")
     timeTaken = time.time()
-    
     indices = sorters.bubble.SortIndex(unsorted, "ascend")
     temp = []
     for i in indices:
