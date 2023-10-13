@@ -5,11 +5,11 @@ I have decided that I am now sick of having to write sorting algorithms every ti
 
 ### To do (Sorting algorithms):
 - [x] Implement bubble sort
-- [ ] Implement merge sort
+- [x] Implement merge sort
 - [ ] Implement insertion sort
 - [ ] Implement bogo sort
 ### To do (Test script):
 - [x] Implement bubble sort
-- [ ] Implement merge sort
+- [x] Implement merge sort
 - [ ] Implement insertion sort
 - [ ] Implement bogo sort
