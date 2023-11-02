@@ -1,3 +1,4 @@
+from random import randint
 from copy import deepcopy
 # Sort - Sorts the list and returns the Sorted list
 # SortIndex - Sorts the list and returns a new list of indices showing where each value in the original list needs to be to be Sorted
@@ -7,7 +8,6 @@ class InvalidDirectionException(Exception):
     def __init__(self):
         self.message = "Sorting direction was not of form 'Ascend' or 'Descend'"
         super().__init__(self.message)
-    
 
 class bubble():
     def Sort(unsorted, direction):
@@ -233,3 +233,78 @@ class merge():
                 return output, outInd
             case _:
                 raise InvalidDirectionException
+class bogo():
+    def Sort(inList, direction):
+        # Ensure input list isn't modified by this function
+        unsorted = deepcopy(inList)
+        # Ensure list will be sorted the correct way
+        match (direction):
+            case "ascend":
+                pass
+            case "descend":
+                for i in range(len(unsorted)):
+                    unsorted[i] = -unsorted[i]
+            case _:
+                raise InvalidDirectionException
+        done = False
+        while not done:
+            # Do iteration
+            newList = []
+            while len(unsorted) > 0:
+                i = randint(0, len(unsorted) - 1)
+                newList.append(unsorted[i])
+                del unsorted[i]
+            unsorted = deepcopy(newList)
+            # Assume list is sorted
+            done = True
+            # Check if list is sorted
+            lastVal = unsorted[0]
+            for val in unsorted:
+                if lastVal > val:
+                    done = False
+                lastVal = val
+        # Fix changes made to ensure correct sort direction
+        match (direction):
+            case "descend":
+                for i in range(len(unsorted)):
+                    unsorted[i] = -unsorted[i]
+        # Return sorted list
+        return unsorted
+    def SortIndex(inList, direction):
+        # Ensure input list isn't modified by this function
+        unsorted = deepcopy(inList)
+        # Ensure list will be sorted the correct way
+        match (direction):
+            case "ascend":
+                pass
+            case "descend":
+                for i in range(len(unsorted)):
+                    unsorted[i] = -unsorted[i]
+            case _:
+                raise InvalidDirectionException
+        done = False
+        indices = []
+        for i in range(len(unsorted)):
+            indices.append(i)
+        while not done:
+            # Do iteration
+            newList = []
+            tI = indices
+            indices = []
+            while len(unsorted) > 0:
+                i = randint(0, len(unsorted) - 1)
+                newList.append(unsorted[i])
+                indices.append(tI[i])
+                del unsorted[i]
+                del tI[i]
+            unsorted = deepcopy(newList)
+            # Assume list is sorted
+            done = True
+            # Check if list is sorted
+            lastVal = unsorted[0]
+            for val in unsorted:
+                if lastVal > val:
+                    done = False
+                lastVal = val
+        # Return sorted indices
+        return indices

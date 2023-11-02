@@ -1,7 +1,7 @@
 import time, sorters
 
 def TestBubble(unsorted, ascend, descend):
-    # Test bubble sortIndex
+    # Test bubble SortIndex
     print(">Testing Bubble Sort<")
     timeTaken = time.time()
     indices = sorters.bubble.SortIndex(unsorted, "ascend")

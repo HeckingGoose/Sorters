@@ -1,7 +1,7 @@
 import time, sorters
 
 def TestMerge(unsorted, ascend, descend):
-    # Test merge sort
+    # Test merge Sort
     print(">Testing Merge Sort<")
     timeTaken = time.time()
     output = sorters.merge.Sort(unsorted, "ascend")
@@ -17,6 +17,7 @@ def TestMerge(unsorted, ascend, descend):
     else:
         print("(failed): merge.Sort - Descend - " + str(time.time() - timeTaken) + "s")
 
+    # Test merge SortIndex
     timeTaken = time.time()
     indices = sorters.merge.SortIndex(unsorted, "ascend")
     temp = []

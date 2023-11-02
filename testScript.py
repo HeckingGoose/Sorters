@@ -1,4 +1,4 @@
-import sorters, random, time, testBubble, testMerge
+import sorters, random, time, testBubble, testMerge, testBogo
 
 def GenerateData(testSize):
     print("Generating lists to test algorithms...")
@@ -32,7 +32,7 @@ for i in range(numValues):
 print("Bubble Sort ascend:")
 print(sorters.bubble.Sort(unsorted, "ascend"))
 print()
-print("Bubble Sort descend")
+print("Bubble Sort descend:")
 print(sorters.bubble.Sort(unsorted, "descend"))
 print()
 print("Bubble Sort wrong direction test:")
@@ -41,6 +41,9 @@ try:
 except Exception as e:
     print(e)
 
+print("Test bogo sort:")
+u, a, d = GenerateData(5)
+testBogo.TestBogo(u, a, d)
 RunTests(0)
 RunTests(1)
 RunTests(5)
