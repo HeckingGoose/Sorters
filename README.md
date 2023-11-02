@@ -7,9 +7,9 @@ I have decided that I am now sick of having to write sorting algorithms every ti
 - [x] Implement bubble sort
 - [x] Implement merge sort
 - [ ] Implement insertion sort
-- [ ] Implement bogo sort
+- [x] Implement bogo sort
 ### To do (Test script):
 - [x] Implement bubble sort
 - [x] Implement merge sort
 - [ ] Implement insertion sort
-- [ ] Implement bogo sort
+- [x] Implement bogo sort
